@@ -26,4 +26,16 @@ app.get('/audio', (req, res) => {
     });
 });
 
+app.get('/info', (req, res) => {
+    var URL = req.query.URL;
+    ytdl.getInfo(URL, (err, info) => {
+        res.send({
+            'title': info.player_response.videoDetails.title,
+            'tumbnails': info.player_response.videoDetails.thumbnail.thumbnails,
+            'author': info.player_response.videoDetails.author,
+            'author_avatar': info.author.avatar
+        });
+    });
+});
+
 app.listen(process.env.PORT);
