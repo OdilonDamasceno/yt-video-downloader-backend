@@ -8,7 +8,7 @@ You need [Node.js](https://nodejs.org/en/) to use this project
 
 ## Developing
 
-Follow the above steps: 
+Follow the steps below: 
 
 ``` shell 
 git clone https://github.com/OdilonDamasceno/yt-video-downloader-backend.git
