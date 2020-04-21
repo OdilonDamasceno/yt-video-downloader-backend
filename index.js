@@ -10,7 +10,7 @@ app.get('/video', (req, res) => {
         res.header('Content-Disposition', 'attachment; filename="' + info.title + ".mp4");
         ytdl(URL, {
             quality: 'highest',
-            format: 'video'
+            filter: 'video'
         }).pipe(res);
     });
 });
