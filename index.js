@@ -7,10 +7,11 @@ require('dotenv').config();
 app.get('/video', (req, res) => {
     var URL = req.query.URL;
     ytdl.getInfo(URL, (err, info) => {
-        res.header('Content-Disposition', 'attachment; filename="' + info.title + ".mp4");
+        res.header('Content-Disposition', 'attachment; filename='+info.title+'.mp4',);
         ytdl(URL, {
             quality: 'highest',
-            filter: 'video'
+            filter: 'video',
+            format: '.mp4'
         }).pipe(res);
     });
 });
